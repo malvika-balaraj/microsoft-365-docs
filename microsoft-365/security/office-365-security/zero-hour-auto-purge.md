@@ -87,6 +87,8 @@ For more information about configuring spam filtering verdicts, see [Configure a
 
 ZAP will not quarantine any message that's in the process of [Dynamic Delivery](atp-safe-attachments.md#dynamic-delivery-in-safe-attachments-policies) in Safe Attachments scanning, or where EOP malware filtering has already replaced the attachment with the **Malware Alert Text.txt** file. If a phishing or spam signal is received for these types of messages, and the filtering verdict in the anti-spam policy is set to take some action on the message (Move to Junk, Redirect, Delete, or Quarantine) then ZAP will default to a 'Move to Junk' action.
 
+ZAP will not quarantine messages if Safe Attachments is turned off and a malware signal is not recieved. For more information, see [Safe Attachments](safe-attachments.md).
+
 ## How to see if ZAP moved your message
 
 To determine if ZAP moved your message, you can use either the [Threat Protection Status report](view-email-security-reports.md#threat-protection-status-report) or [Threat Explorer (and real-time detections)](threat-explorer.md). Note that as a system action, ZAP is not logged in the Exchange mailbox audit logs.
